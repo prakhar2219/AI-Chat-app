@@ -31,7 +31,9 @@ import com.example.rungta.R
 
 @Preview(showSystemUi = true)
 @Composable
-fun SignInScreen() {
+fun SignInScreen(
+    onSignInClick: () -> Unit
+) {
 //    styling dene ke liye ..agr hmko do colours kaa use krna hai simultaneously to hum brush ke object kaa use krte hai
     val brush = Brush.linearGradient(
         listOf(
@@ -57,7 +59,7 @@ fun SignInScreen() {
 
         Text(
             text = "Rungta Project",
-//    to use/modify some properties of the typography we have used th ecopy function
+//    to use/modify some properties of the typography we have used the copy function
             style = MaterialTheme.typography.displayMedium.copy(fontWeight = FontWeight.Companion.ExtraBold),
             color = Color(0xFF101010)
         )
@@ -70,7 +72,7 @@ fun SignInScreen() {
         )
         Spacer(modifier = Modifier.height(60.dp))
         Button(
-            onClick = {},
+            onClick = {onSignInClick()},
             modifier = Modifier
                 .background(brush, CircleShape)
                 .fillMaxWidth(.7f)
