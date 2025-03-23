@@ -6,6 +6,7 @@ plugins {
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
     alias(libs.plugins.google.gms.google.services)
+    kotlin("plugin.serialization") version "2.1.20"
 
 }
 
@@ -78,6 +79,6 @@ dependencies {
     // For local unit tests
     testImplementation (libs.dagger.hilt.android.testing)
     kspTest (libs.dagger.hilt.compiler)
-
-
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
 }

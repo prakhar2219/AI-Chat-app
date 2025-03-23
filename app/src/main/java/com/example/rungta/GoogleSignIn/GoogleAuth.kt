@@ -75,4 +75,15 @@ class GoogleAuth(
             )
         }
     }
+
+    fun getSignedInUser(): UserData?= auth.currentUser?.run {
+        UserData(
+            email=email.toString(),
+            userId = uid,
+            username = displayName,
+            ppUrl = photoUrl?.toString()
+        )
+    }
+
+
 }
