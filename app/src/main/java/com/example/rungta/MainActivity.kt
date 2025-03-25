@@ -60,7 +60,7 @@ class MainActivity : ComponentActivity() {
 //                            ye just dekhegaa ki abhi jo hmara user hai uska data hai ki nhi hmare paas wo null hai kya
 //                            if null->signIn screen    if not->chats screen
                             composable<StartScreen> {
-                               LaunchedEffect(key1=Unit) {  val userData=googleAuthUiClient.getSignedInUser()
+                               LaunchedEffect(key1=5) {  val userData=googleAuthUiClient.getSignedInUser()
                                    if (userData != null) {
                                        navController.navigate(ChatsScreen)
                                    }else{
